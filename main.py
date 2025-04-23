@@ -1,201 +1,112 @@
-import numpy as np
-import matplotlib.pyplot as plt
-from env_g import TrainYardEnv
-import time
+"""Quick sanity‑check script for the updated TrainYard environment.
 
-def test_environment():
-    """
-    Simple test function to verify that the TrainYardEnv is working as expected
-    by running a single train through the yard.
-    """
-    print("Initializing train yard environment...")
-    env = TrainYardEnv(verbose=True)  # Enable verbose logging
-    
-    # Reset the environment to start fresh
-    print("Resetting environment...")
-    observation = env.reset()
-    
-    # Set up visualization
-    fig, ax = plt.subplots(figsize=(12, 6))
-    plt.ion()  # Enable interactive mode
-    
-    # Keep track of events for later analysis
-    track_assignments = {}
-    train_movements = []
-    
-    # Run the environment for a limited number of steps
-    # We'll focus on just one train to keep it simple
-    max_steps = 100
-    target_train = "red1"  # We'll track this specific train
-    
-    print(f"Starting simulation, tracking train '{target_train}'...")
-    
+This intentionally keeps things minimal:
+1. Resets the environment
+2. Steps a few times with deliberately conflicting
+   actions (trying to use the *same* entry/exit track for sequential trains)
+3. Prints out observation slices and info dict so you can verify that the
+   `blocked_flag` and `blocked_track_norm` elements behave as expected.
+
+Run with:  python test_env.py
+"""
+
+import numpy as np
+from env_g import TrainYardEnv
+
+# Helper to pretty‑print observation details ---------------------------------
+
+# def decode_blocked_info(obs):
+#     """Return (blocked_flag, blocked_track_index) decoded from observation."""
+#     blocked_flag = obs[0]  # after env rewrite this is at the *end* so adapt if needed
+#     blocked_track_norm = obs[1]
+#     return blocked_flag, blocked_track_norm
+
+
+# def main():
+#     env = TrainYardEnv(verbose=False)
+#     obs = env.reset()
+#     print("Environment reset – starting simulation\n")
+
+#     # Artificial agent: always demands track‑0 for both entry & exit
+#     # to maximise likelihood of a clash when consecutive trains arrive.
+#     fixed_track = 0  # index into entry_exit_tracks list
+#     done = False
+#     step_no = 0
+
+#     while not done and step_no < 20:
+#         action = {
+#             "entry_track": fixed_track,
+#             "exit_track": fixed_track,
+#             "wait_time": 0
+#         }
+#         obs, reward, done, info = env.step(action)
+#         bflag, btrack = decode_blocked_info(obs[-2:])  # last two elements
+#         print(f"Step {step_no:02d}: time={info['time_str']}, reward={reward:.2f}, "
+#               f"blocked={bool(bflag)}, norm_track={btrack:.2f}")
+#         step_no += 1
+
+#     print("\nSimulation finished – completed trains:", info.get("trains_completed"))
+
+
+# if __name__ == "__main__":
+#     main()
+
+
+
+"""test_env.py – sanity test for TrainYardEnv
+------------------------------------------------
+* Cycles through **all** entry tracks instead of always picking index 0.
+* Uses the next track (mod N) as exit so entry ≠ exit.
+* Alternates `wait_time` 0 / 5 min to exercise that parameter.
+* Prints blocked‑flag info that lives in the **last two** obs slots.
+Run with:
+    python test_env.py
+"""
+# ---------------------------------------------------------------------------
+# Helper functions
+# ---------------------------------------------------------------------------
+
+def decode_blocked_info(obs):
+    """Return (flag, norm_idx) from the last two obs slots."""
+    if len(obs) < 2:
+        return False, 0.0
+    return bool(obs[-2]), obs[-1]
+
+
+def choose_action(step_no: int, n_tracks: int):
+    """Round‑robin entry; next track as exit; alternate wait time."""
+    entry = step_no % n_tracks
+    exit_ = (entry + 1) % n_tracks
+    wait  = 5 if step_no % 2 else 0
+    return {"entry_track": entry, "exit_track": exit_, "wait_time": wait}
+
+# ------------------------------------------------- main loop ---------------
+
+def main(max_steps: int = 40):
+    env = TrainYardEnv(verbose=False)
+    obs = env.reset()
+    n_tracks = len(env.entry_exit_tracks)
+
+    print("Environment reset – starting simulation\n")
+
     for step in range(max_steps):
-        # If we have a next arrival train, assign it to tracks
-        if env.next_arrival_train:
-            train_id = env.next_arrival_train
-            print(f"\nStep {step}: Assigning tracks for arriving train: {train_id}")
-            
-            # Get available entry and exit tracks
-            entry_exit_tracks = list(env.entry_exit_tracks.keys())
-            
-            # Find the train in the timetable to get its info
-            train_info = next((t for t in env.timetable if t['train'] == train_id), None)
-            
-            if train_info:
-                # Find suitable tracks based on train length
-                train_length = train_info['length']
-                suitable_entries = [t for t in entry_exit_tracks 
-                                   if env.entry_exit_tracks[t] >= train_length]
-                suitable_exits = [t for t in entry_exit_tracks 
-                                 if env.entry_exit_tracks[t] >= train_length]
-                
-                if suitable_entries and suitable_exits:
-                    # Choose first suitable track for simplicity
-                    entry_track = suitable_entries[0]
-                    exit_track = suitable_exits[-1]  # Choose a different one
-                    wait_time = 5  # Arbitrary wait time in minutes
-                    
-                    # Record the assignment
-                    track_assignments[train_id] = {
-                        'entry': entry_track,
-                        'exit': exit_track,
-                        'wait': wait_time
-                    }
-                    
-                    # Convert to action indices
-                    entry_idx = entry_exit_tracks.index(entry_track)
-                    exit_idx = entry_exit_tracks.index(exit_track)
-                    
-                    action = {
-                        'entry_track': entry_idx,
-                        'exit_track': exit_idx,
-                        'wait_time': wait_time
-                    }
-                    
-                    print(f"Assigned tracks for {train_id}:")
-                    print(f"  Entry track: {entry_track}")
-                    print(f"  Exit track: {exit_track}")
-                    print(f"  Wait time: {wait_time} minutes")
-                else:
-                    print(f"No suitable tracks found for train {train_id} (length: {train_length})")
-                    # Use default action
-                    action = {
-                        'entry_track': 0,
-                        'exit_track': 0,
-                        'wait_time': 0
-                    }
-            else:
-                print(f"Warning: Could not find train {train_id} in timetable")
-                # Use default action
-                action = {
-                    'entry_track': 0,
-                    'exit_track': 0,
-                    'wait_time': 0
-                }
-        else:
-            # No train to assign, use a default action
-            action = {
-                'entry_track': 0,
-                'exit_track': 0,
-                'wait_time': 0
-            }
-        
-        # Take a step in the environment
-        observation, reward, done, info = env.step(action)
-        
-        # Track train states
-        for train_id, state in env.train_status.items():
-            if train_id == target_train or train_id.startswith(f"{target_train}"):
-                location = env.train_locations.get(train_id, "unknown")
-                train_movements.append({
-                    'step': step,
-                    'train': train_id,
-                    'state': state,
-                    'location': location,
-                    'time': env._minutes_to_time_str(env.current_time)
-                })
-                print(f"Train {train_id} is in state '{state}' at {location} ({env._minutes_to_time_str(env.current_time)})")
-        
-        # Visualize current environment state
-        ax.clear()
-        
-        # Plot tracks with occupancy
-        track_y = {}
-        y_pos = 0
-        
-        # Group tracks by type
-        entry_exit_tracks = sorted(list(env.entry_exit_tracks.keys()))
-        loading_tracks = sorted(list(env.loading_tracks.keys()))
-        parking_tracks = sorted(list(env.parking_tracks.keys()))
-        
-        # Add entry/exit tracks
-        for track in entry_exit_tracks:
-            track_y[track] = y_pos
-            y_pos += 1
-        
-        # Add loading tracks
-        y_pos += 0.5  # Gap
-        for track in loading_tracks:
-            track_y[track] = y_pos
-            y_pos += 1
-        
-        # Add parking tracks
-        y_pos += 0.5  # Gap
-        for track in parking_tracks:
-            track_y[track] = y_pos
-            y_pos += 1
-        
-        # Plot tracks
-        for track, y in track_y.items():
-            # Draw track
-            ax.plot([0, 10], [y, y], 'k-', linewidth=2)
-            
-            # Check if track is occupied
-            status = env.track_status[track]
-            if status['train']:
-                # Draw train on track
-                ax.plot([5], [y], 'ro', markersize=10)
-                ax.text(5.2, y, status['train'], fontsize=8, va='center')
-        
-        # Set labels
-        ax.set_title(f"Train Yard State - Step {step}, Time: {env._minutes_to_time_str(env.current_time)}")
-        ax.set_yticks(list(track_y.values()))
-        ax.set_yticklabels(list(track_y.keys()))
-        ax.set_xlim(0, 10)
-        ax.set_ylim(-1, y_pos + 1)
-        ax.set_xticks([])
-        
-        # Add info text
-        info_text = f"Completed Trains: {env.completed_trains}\n"
-        info_text += f"Delayed Departures: {env.delayed_departures}\n"
-        info_text += f"Total Delay Minutes: {env.total_delay_minutes}"
-        ax.text(0.02, 0.02, info_text, transform=ax.transAxes, fontsize=10,
-                verticalalignment='bottom', bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
-        
-        plt.tight_layout()
-        plt.draw()
-        plt.pause(0.1)
-        
+        action = choose_action(step, n_tracks)
+        obs, reward, done, info = env.step(action)
+
+        blocked_flag, blocked_norm = decode_blocked_info(obs)
+        print(
+            f"Step {step:02d}: time={info.get('time_str','?')}, "
+            f"reward={reward:.2f}, blocked={blocked_flag}, blocked_norm={blocked_norm:.2f}, "
+            f"completed={info.get('trains_completed','?')}, tracks_used={info.get('tracks_used','?')}"
+        )
+
         if done:
-            print(f"\nSimulation completed after {step+1} steps!")
+            print("\nSimulation finished – completed trains:", info.get('trains_completed','?'))
             break
-    
-    # Print final stats
-    print("\n===== Simulation Complete =====")
-    print(f"Final Time: {env._minutes_to_time_str(env.current_time)}")
-    print(f"Completed Trains: {env.completed_trains}/{len(env.timetable)}")
-    print(f"Delayed Departures: {env.delayed_departures}")
-    print(f"Total Delay Minutes: {env.total_delay_minutes}")
-    
-    # Print the movement history for our target train
-    print(f"\n===== Movement History for {target_train} =====")
-    for movement in train_movements:
-        print(f"{movement['time']}: {movement['train']} - {movement['state']} at {movement['location']}")
-    
-    # Close the plot
-    plt.ioff()
-    plt.show()
+
+    env.close()
+
 
 if __name__ == "__main__":
-    test_environment()
+    main()
+

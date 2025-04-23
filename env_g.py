@@ -14,7 +14,7 @@ logger = logging.getLogger("TrainYardEnv")
 class TrainYardEnv(gym.Env):
     """
     Gym environment for train yard operations with train splitting, loading, and coupling.
-    This improved version includes better state management, error handling, and realistic constraints.
+    Includes explicit penalties for invalid assignments and bonuses for successful operations.
     """
     
     MOVEMENT_TYPES = ['to_entry', 'to_loading', 'to_parking', 'to_exit', 'misc']
@@ -24,7 +24,6 @@ class TrainYardEnv(gym.Env):
         'moving_to_exit', 'waiting_at_exit', 'coupling', 'coupled', 'departed'
     ]
     
-    # Define valid state transitions
     VALID_TRANSITIONS = {
         'scheduled': ['arriving'],
         'arriving': ['splitting'],
@@ -43,105 +42,77 @@ class TrainYardEnv(gym.Env):
     def __init__(self, verbose=False):
         super(TrainYardEnv, self).__init__()
         
-        # Configure logging based on verbosity
         if verbose:
             logger.setLevel(logging.DEBUG)
         
-        # Load track and timetable data
+        # Parse track configurations
         self.entry_exit_tracks = self._parse_tracks("32:750,33:750,34:750,35:750,36:670,m3:450,m4:450,m5:550,m6:600,m7:750,m8:750,m9:750,m10:750,m11:900,m12:850,m13:800")
-        self.parking_tracks = self._parse_tracks("51:665,52:665,53:741,54:746,55:752")
-        self.loading_tracks = self._parse_tracks("56A:571,56B:161,57:787,54:746,71:303,41:487,42:487,43:313,44:313,4x:313,29:242,30:237,20:500")
-        self.timetable = self._load_timetable()
-        
-        # Track connections - simplified model of which tracks can connect to others
+        self.parking_tracks    = self._parse_tracks("51:665,52:665,53:741,54:746,55:752")
+        self.loading_tracks    = self._parse_tracks("56A:571,56B:161,57:787,54:746,71:303,41:487,42:487,43:313,44:313,4x:313,29:242,30:237,20:500")
+        self.timetable         = self._load_timetable()
         self._initialize_track_connections()
-        
-        # Movement parameters - more realistic timing model
+
+        # Movement timing parameters
         self.movement_times = {
-            'entry_to_loading': 15,    # Minutes to move from entry to loading
-            'loading_to_exit': 15,     # Minutes to move from loading to exit
-            'coupling_time': 15,       # Minutes to couple train halves
-            'splitting_time': 15,      # Minutes to split a train
-            'min_headway': 10          # Minimum headway between trains
+            'entry_to_loading': 15,
+            'loading_to_exit': 15,
+            'coupling_time': 15,
+            'splitting_time': 15,
+            'min_headway': 10
         }
-        
-        # State tracking
+
+        # Reward shaping parameters
+        self.invalid_assignment_penalty = 5.0
+        self.entry_reservation_bonus   = 2.0
+        self.split_completion_bonus    = 1.0
+
+        # Simulation state
         self.current_time = 0
         self.track_status = {t: {'occupied_until': 0, 'train': None, 'reserved_for': None} 
-                            for t in self._all_tracks()}
-        self.trains = {}
-        self.train_locations = {}
-        self.train_status = {}
-        self.event_queue = []
+                             for t in self._all_tracks()}
+        self.trains         = {}
+        self.train_locations= {}
+        self.train_status   = {}
+        self.event_queue    = []
         self.next_arrival_train = None
-        self.max_departure_time = max([t['departure'] for t in self.timetable])
-        
-        # Headway tracking for all movement types
-        self.last_movement_time = {movement_type: 0 for movement_type in self.MOVEMENT_TYPES}
-        
-        # Performance tracking
-        self.delayed_departures = 0
-        self.total_delay_minutes = 0
-        self.completed_trains = 0
-        
-        # Action and observation spaces
-        entry_exit_tracks = list(self.entry_exit_tracks.keys())
-        self.action_space = spaces.Dict({
-            'entry_track': spaces.Discrete(len(entry_exit_tracks)),
-            'exit_track': spaces.Discrete(len(entry_exit_tracks)),
-            'wait_time': spaces.Discrete(60)  # Wait up to 60 minutes
-        })
-        
-        # Enhanced observation includes all active trains
-        self._initialize_observation_space()
-        
-        # Initialize statistics and performance metrics
+        self.max_departure_time   = max(t['departure'] for t in self.timetable)
+        self.last_movement_time = {m:0 for m in self.MOVEMENT_TYPES}
+
+        # Performance and step-specific stats
+        self.delayed_departures   = 0
+        self.total_delay_minutes  = 0
+        self.completed_trains     = 0
         self.stats = defaultdict(int)
-        
-        # Initialize event queue with train arrivals
+
+        # Action & observation spaces
+        entry_exit_list = list(self.entry_exit_tracks.keys())
+        self.action_space = spaces.Dict({
+            'entry_track': spaces.Discrete(len(entry_exit_list)),
+            'exit_track' : spaces.Discrete(len(entry_exit_list)),
+            'wait_time'  : spaces.Discrete(60)
+        })
+        self._initialize_observation_space()
+
+        # Seed initial arrivals
         for train in self.timetable:
             heapq.heappush(self.event_queue, (train['arrival'], 'train_arrival', train['train']))
-            # Initialize train state
             self.train_status[train['train']] = 'scheduled'
     
     def _all_tracks(self) -> List[str]:
-        """Get a list of all tracks in the yard."""
         return list(self.entry_exit_tracks) + list(self.parking_tracks) + list(self.loading_tracks)
     
     def _initialize_track_connections(self):
-        """Initialize a simplified model of track connections."""
-        # This is a simplified model - in a real implementation, this would be based on actual yard topology
         self.track_connections = {}
-        
-        # All entry/exit tracks can connect to all loading tracks
-        for entry_track in self.entry_exit_tracks:
-            self.track_connections[entry_track] = set(self.loading_tracks)
-            
-        # All loading tracks can connect to all entry/exit tracks
-        for loading_track in self.loading_tracks:
-            self.track_connections[loading_track] = set(self.entry_exit_tracks)
-            
-        # All parking tracks can connect to all other track types
-        for parking_track in self.parking_tracks:
-            self.track_connections[parking_track] = set(self.entry_exit_tracks) | set(self.loading_tracks)
-            
+        for e in self.entry_exit_tracks: self.track_connections[e] = set(self.loading_tracks)
+        for l in self.loading_tracks:    self.track_connections[l] = set(self.entry_exit_tracks)
+        for p in self.parking_tracks:    self.track_connections[p] = set(self.entry_exit_tracks)|set(self.loading_tracks)
         logger.debug(f"Initialized track connections for {len(self.track_connections)} tracks")
     
     def _initialize_observation_space(self):
-        """Initialize the observation space with enhanced dimensions."""
-        # Track count
         track_count = len(self._all_tracks())
-        
-        # Obs includes: current time, track statuses, upcoming trains (5), and active trains (up to 10)
-        obs_dim = (
-            1 +                 # Current time
-            track_count * 3 +   # Tracks (occupied, time until free, reserved)
-            5 * 5 +             # 5 upcoming trains with 5 features each
-            10 * 6              # Up to 10 active trains with 6 features each
-        )
-        
-        self.observation_space = spaces.Box(low=0, high=1, shape=(obs_dim,), dtype=np.float32)
-        logger.debug(f"Initialized observation space with dimension {obs_dim}")
+        obs_dim = (1 + track_count*3 + 5*5 + 10*6)
+        self.observation_space = spaces.Box(0,1,shape=(obs_dim,),dtype=np.float32)
+        logger.debug(f"Obs space dimension: {obs_dim}")
     
     def _load_timetable(self):
         """Load train timetable with arrival, departure, loading info."""
@@ -164,21 +135,15 @@ class TrainYardEnv(gym.Env):
         ]
         
         timetable = []
-        for train, arrival, departure, load_time, length, load_track in data:
-            arrival_mins = self._time_to_minutes(arrival)
-            departure_mins = self._time_to_minutes(departure)
-            load_tracks = load_track.split("-") if "-" in load_track else [load_track]
-            
+        for train,arr,dep,load_time,length,tracks in data:
+            arr_m = self._time_to_minutes(arr)
+            dep_m = self._time_to_minutes(dep)
+            load_tracks = tracks.split("-") if "-" in tracks else [tracks]
             timetable.append({
-                'train': train,
-                'arrival': arrival_mins,
-                'departure': departure_mins,
-                'load_time': load_time,
-                'length': length,
-                'load_tracks': load_tracks
+                'train':train,'arrival':arr_m,'departure':dep_m,
+                'load_time':load_time,'length':length,'load_tracks':load_tracks
             })
-        
-        return sorted(timetable, key=lambda x: x['arrival'])
+        return sorted(timetable, key=lambda x:x['arrival'])
     
     def _time_to_minutes(self, time_str):
         """Convert time string (e.g., '4:45' or '1 06:00') to minutes."""
@@ -358,133 +323,91 @@ class TrainYardEnv(gym.Env):
             logger.debug(f"Cleaned up data for completed train {base_id}")
     
     def step(self, action):
-        """Take action and advance simulation until next decision point."""
-        import time as py_time  # Import time module for timeout
-
-        # Process action (selecting tracks and wait time)
+        import time as py_time
         track_list = list(self.entry_exit_tracks.keys())
-        entry_track = track_list[action['entry_track']]
-        exit_track = track_list[action['exit_track']]
-        wait_time = action['wait_time']
-        
-        # Add timeout protection
-        start_time = py_time.time()
-        timeout = 10.0  # 10 seconds max per step
-        
-        # Reset action-specific statistics
+        entry = track_list[action['entry_track']]
+        exit_ = track_list[action['exit_track']]
+        wait = action['wait_time']
+
+        start = py_time.time()
+        timeout = 10.0
+        # Reset per-step stats
         self.stats['invalid_track_assignments'] = 0
-        
-        # Assign tracks to next arriving train
+        self.stats['entry_reservations']       = 0
+        self.stats['split_completions']        = 0
+
+        # Assign next arrival
         if self.next_arrival_train:
-            train_info = next((t for t in self.timetable if t['train'] == self.next_arrival_train), None)
-            
-            if train_info is None:
-                logger.error(f"Cannot find train info for {self.next_arrival_train}")
-                self.next_arrival_train = None
+            info = next(t for t in self.timetable if t['train']==self.next_arrival_train)
+            valid = True
+            if not self._is_track_suitable(entry, info['length']):
+                self.stats['invalid_track_assignments']+=1; valid=False
+            if not self._is_track_suitable(exit_,  info['length']):
+                self.stats['invalid_track_assignments']+=1; valid=False
+            if valid and self._reserve_track(entry,self.next_arrival_train,self.current_time+60):
+                heapq.heappush(self.event_queue,(self.current_time,'train_entry',self.next_arrival_train))
+                self.stats['entry_reservations']+=1
+                logger.info(f"Reserved entry of {self.next_arrival_train} on {entry}")
             else:
-                self.trains[self.next_arrival_train] = {
-                    'info': train_info,
-                    'entry_track': entry_track,
-                    'exit_track': exit_track,
-                    'wait_time': wait_time
-                }
-                
-                # Validate the track assignment
-                valid_assignment = True
-                
-                # Check if entry track is long enough
-                if not self._is_track_suitable(entry_track, train_info['length']):
-                    logger.warning(f"Entry track {entry_track} too short for {self.next_arrival_train}")
-                    self.stats['invalid_track_assignments'] += 1
-                    valid_assignment = False
-                
-                # Check if exit track is long enough
-                if not self._is_track_suitable(exit_track, train_info['length']):
-                    logger.warning(f"Exit track {exit_track} too short for {self.next_arrival_train}")
-                    self.stats['invalid_track_assignments'] += 1
-                    valid_assignment = False
-                    
-                # Schedule train entry if valid assignment
-                if valid_assignment:
-                    # Try to reserve the entry track
-                    if self._reserve_track(entry_track, self.next_arrival_train, self.current_time + 60):
-                        heapq.heappush(self.event_queue, (self.current_time, 'train_entry', self.next_arrival_train))
-                        logger.info(f"Scheduled entry of {self.next_arrival_train} on track {entry_track}")
-                    else:
-                        # If can't reserve, try again later
-                        heapq.heappush(self.event_queue, (self.current_time + 10, 'train_arrival', self.next_arrival_train))
-                        logger.info(f"Rescheduled arrival of {self.next_arrival_train} in 10 minutes")
-                else:
-                    # If invalid assignment, try again later
-                    heapq.heappush(self.event_queue, (self.current_time + 10, 'train_arrival', self.next_arrival_train))
-                    logger.info(f"Rescheduled arrival of {self.next_arrival_train} in 10 minutes due to invalid track assignment")
-                
-                self.next_arrival_train = None
-        
-        # Process events until next decision needed with timeout protection
-        done = False
+                heapq.heappush(self.event_queue,(self.current_time+10,'train_arrival',self.next_arrival_train))
+                logger.info(f"Rescheduled {self.next_arrival_train} due to invalid track assignment")
+            self.next_arrival_train=None
+
+        # Process events
+        done=False
         try:
-            # Process events with timeout monitoring
             done = self._process_events()
-            
-            # Check for timeout
-            elapsed = py_time.time() - start_time
-            if elapsed > timeout:
-                logger.warning(f"Step execution timeout reached after {elapsed:.1f}s. Terminating episode.")
-                done = True
+            if py_time.time()-start>timeout:
+                logger.warning("Step timeout")
+                done=True
         except Exception as e:
-            logger.error(f"Unexpected error in step execution: {e}")
-            done = True
-        
-        # Check for deadlocks
+            logger.error(f"Error in step: {e}")
+            done=True
+
         if not done and self._check_for_deadlocks():
-            logger.warning("Deadlock detected - simulation will terminate")
-            done = True
-        
-        # Calculate enhanced reward
+            logger.warning("Deadlock - terminating")
+            done=True
+
         reward = self._calculate_reward()
-        
-        # Prepare info dictionary with detailed stats
-        info = {
-            'current_time': self.current_time,
-            'time_str': self._minutes_to_time_str(self.current_time),
-            'tracks_used': sum(1 for status in self.track_status.values() 
-                            if status['occupied_until'] > self.current_time),
-            'trains_completed': self.completed_trains,
-            'delayed_departures': self.delayed_departures,
-            'total_delay_minutes': self.total_delay_minutes,
-            'invalid_track_assignments': self.stats['invalid_track_assignments'],
-            'execution_time': py_time.time() - start_time
+        obs, info = self._get_observation(), {
+            'current_time':self.current_time,
+            'time_str':self._minutes_to_time_str(self.current_time),
+            'tracks_used':sum(1 for s in self.track_status.values() if s['occupied_until']>self.current_time),
+            'trains_completed':self.completed_trains,
+            'delayed_departures':self.delayed_departures,
+            'total_delay_minutes':self.total_delay_minutes,
+            'invalid_track_assignments':self.stats['invalid_track_assignments'],
+            'entry_reservations':self.stats['entry_reservations'],
+            'split_completions':self.stats['split_completions'],
+            'execution_time':py_time.time()-start
         }
-        
-        return self._get_observation(), reward, done, info
+        return obs, reward, done, info
     
     def _calculate_reward(self) -> float:
-        """Calculate a more comprehensive reward."""
-        # Base reward components
-        used_tracks = sum(1 for status in self.track_status.values() 
-                         if status['occupied_until'] > self.current_time)
-        
-        # Track efficiency component (penalize unused capacity)
-        total_track_length = sum(length for length in 
-                              list(self.entry_exit_tracks.values()) + 
-                              list(self.parking_tracks.values()) + 
-                              list(self.loading_tracks.values()))
-        
-        used_length = sum(self._get_track_length(track) for track, status in self.track_status.items() 
-                        if status['occupied_until'] > self.current_time)
-        
-        efficiency_score = used_length / total_track_length if total_track_length > 0 else 0
-        
-        # Completion reward
-        completion_reward = self.completed_trains * 10
-        
-        # Delay penalty
-        delay_penalty = self.total_delay_minutes * 0.1
-        
-        # Combine components
-        reward = -used_tracks + completion_reward - delay_penalty + (efficiency_score * 5)
-        
+        """
+        Reward = + entry reservation bonuses
+               + split completion bonuses
+               - invalid assignment penalties
+               - track-occupancy penalties
+               + train departures reward
+               - delay penalties
+               + efficiency bonus
+        """
+        used_tracks = sum(1 for s in self.track_status.values() if s['occupied_until']>self.current_time)
+        total_length = sum(list(self.entry_exit_tracks.values())+
+                           list(self.parking_tracks.values())+
+                           list(self.loading_tracks.values()))
+        used_length  = sum(self._get_track_length(t) for t,s in self.track_status.items()
+                           if s['occupied_until']>self.current_time)
+        eff_score    = used_length/total_length if total_length>0 else 0
+        completion   = self.completed_trains*10
+        delay_p      = self.total_delay_minutes*0.1
+
+        invalid_p    = self.stats['invalid_track_assignments']*self.invalid_assignment_penalty
+        entry_b      = self.stats['entry_reservations']*self.entry_reservation_bonus
+        split_b      = self.stats['split_completions']*self.split_completion_bonus
+
+        reward = entry_b + split_b - invalid_p - used_tracks + completion - delay_p + eff_score*5
         return reward
     
     def _process_events(self):
@@ -632,10 +555,8 @@ class TrainYardEnv(gym.Env):
             logger.info(f"Rescheduled entry of {train_id} to {self._minutes_to_time_str(new_time)} - track {entry_track} not available")
     
     def _handle_train_split(self, train_id: str, time: int) -> None:
-        """Handle train splitting with headway constraints."""
-        # Update state to show split is complete
         if not self._update_train_state(train_id, 'split_complete'):
-            logger.warning(f"Failed to update state for split completion of train {train_id}")
+            logger.warning(f"Failed split_complete for {train_id}")
         
         # Get train information
         train_info = self.trains[train_id]['info']
@@ -645,6 +566,7 @@ class TrainYardEnv(gym.Env):
         
         # Update entry track occupation time to include wait time
         self.track_status[entry_track]['occupied_until'] = time + wait_time
+        self.stats['split_completions'] += 1
         
         # Create train halves with proper state transition
         if not self._update_train_state(f"{train_id}a", 'waiting_at_entry'):

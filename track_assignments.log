@@ -1,0 +1,2147 @@
+TRAIN YARD TRACK ASSIGNMENTS LOG
+================================
+
+
+Time: 01:30 (Step 1)
+
+Time: 03:45 (Step 2)
+  green1 entered track 32 at 01:30
+  green1a entered track 4x at 01:30
+
+Time: 04:45 (Step 3)
+  green1 left track 32 at 03:45
+  green1a entered track 32 at 03:45
+  pink1 entered track 33 at 03:45
+  green1a left track 4x at 03:45
+
+Time: 05:15 (Step 4)
+  red1 entered track 34 at 04:45
+  red1a entered track 43 at 04:45
+  red1b entered track 44 at 04:45
+
+Time: 05:45 (Step 5)
+  brown1 entered track 35 at 05:15
+  brown1a entered track 20 at 05:15
+
+Time: 06:15 (Step 6)
+  purple1 entered track 36 at 05:45
+  purple1a entered track 71 at 05:45
+
+Time: 06:25 (Step 7)
+
+Time: 06:35 (Step 8)
+
+Time: 06:45 (Step 9)
+
+Time: 06:55 (Step 10)
+
+Time: 07:05 (Step 11)
+
+Time: 07:15 (Step 12)
+  red1 left track 34 at 07:05
+  red1a entered track 34 at 07:05
+  red1a left track 43 at 07:05
+
+Time: 07:25 (Step 13)
+
+Time: 07:35 (Step 14)
+  brown1 left track 35 at 07:25
+  brown1a entered track 35 at 07:25
+  brown1a left track 20 at 07:25
+
+Time: 07:45 (Step 15)
+
+Time: 07:55 (Step 16)
+
+Time: 08:05 (Step 17)
+  purple1 left track 36 at 07:55
+  purple1a entered track 36 at 07:55
+  purple1a left track 71 at 07:55
+
+Time: 08:15 (Step 18)
+
+Time: 08:25 (Step 19)
+
+Time: 08:35 (Step 20)
+  red1a left track 34 at 08:25
+  red1b entered track 34 at 08:25
+  red1b left track 44 at 08:25
+
+Time: 08:45 (Step 21)
+  red1b left track 34 at 08:35
+  red1 entered track 34 at 08:35
+
+Time: 08:45 (Step 22)
+
+Time: 08:55 (Step 23)
+
+Time: 08:55 (Step 24)
+
+Time: 09:05 (Step 25)
+
+Time: 09:05 (Step 26)
+
+Time: 09:15 (Step 27)
+
+Time: 09:15 (Step 28)
+
+Time: 09:25 (Step 29)
+
+Time: 09:25 (Step 30)
+
+Time: 09:35 (Step 31)
+
+Time: 09:35 (Step 32)
+
+Time: 09:45 (Step 33)
+
+Time: 09:45 (Step 34)
+
+Time: 09:55 (Step 35)
+
+Time: 09:55 (Step 36)
+
+Time: 10:05 (Step 37)
+
+Time: 10:05 (Step 38)
+
+Time: 10:15 (Step 39)
+
+Time: 10:15 (Step 40)
+
+Time: 10:25 (Step 41)
+
+Time: 10:25 (Step 42)
+
+Time: 10:30 (Step 43)
+
+Time: 10:35 (Step 44)
+
+Time: 10:35 (Step 45)
+
+Time: 10:40 (Step 46)
+
+Time: 10:45 (Step 47)
+
+Time: 10:45 (Step 48)
+
+Time: 10:50 (Step 49)
+
+Time: 10:55 (Step 50)
+
+Time: 10:55 (Step 51)
+
+Time: 11:00 (Step 52)
+
+Time: 11:05 (Step 53)
+
+Time: 11:05 (Step 54)
+
+Time: 11:10 (Step 55)
+
+Time: 11:15 (Step 56)
+
+Time: 11:15 (Step 57)
+
+Time: 11:20 (Step 58)
+
+Time: 11:25 (Step 59)
+
+Time: 11:25 (Step 60)
+
+Time: 11:30 (Step 61)
+
+Time: 11:35 (Step 62)
+  red1 left track 34 at 11:30
+
+Time: 11:35 (Step 63)
+
+Time: 11:40 (Step 64)
+
+Time: 11:45 (Step 65)
+
+Time: 11:45 (Step 66)
+
+Time: 11:50 (Step 67)
+
+Time: 11:55 (Step 68)
+
+Time: 11:55 (Step 69)
+
+Time: 12:00 (Step 70)
+
+Time: 12:05 (Step 71)
+
+Time: 12:05 (Step 72)
+
+Time: 12:10 (Step 73)
+
+Time: 12:15 (Step 74)
+
+Time: 12:15 (Step 75)
+
+Time: 12:20 (Step 76)
+
+Time: 12:25 (Step 77)
+
+Time: 12:25 (Step 78)
+
+Time: 12:30 (Step 79)
+
+Time: 12:35 (Step 80)
+
+Time: 12:35 (Step 81)
+
+Time: 12:40 (Step 82)
+
+Time: 12:45 (Step 83)
+
+Time: 12:45 (Step 84)
+
+Time: 12:45 (Step 85)
+
+Time: 12:50 (Step 86)
+
+Time: 12:55 (Step 87)
+
+Time: 12:55 (Step 88)
+
+Time: 12:55 (Step 89)
+
+Time: 13:00 (Step 90)
+
+Time: 13:05 (Step 91)
+
+Time: 13:05 (Step 92)
+
+Time: 13:05 (Step 93)
+
+Time: 13:10 (Step 94)
+
+Time: 13:15 (Step 95)
+
+Time: 13:15 (Step 96)
+
+Time: 13:15 (Step 97)
+
+Time: 13:20 (Step 98)
+
+Time: 13:25 (Step 99)
+
+Time: 13:25 (Step 100)
+
+Time: 13:25 (Step 101)
+
+Time: 13:30 (Step 102)
+
+Time: 13:35 (Step 103)
+
+Time: 13:35 (Step 104)
+
+Time: 13:35 (Step 105)
+
+Time: 13:40 (Step 106)
+
+Time: 13:45 (Step 107)
+
+Time: 13:45 (Step 108)
+
+Time: 13:45 (Step 109)
+
+Time: 13:50 (Step 110)
+
+Time: 13:55 (Step 111)
+
+Time: 13:55 (Step 112)
+
+Time: 13:55 (Step 113)
+
+Time: 14:00 (Step 114)
+
+Time: 14:05 (Step 115)
+
+Time: 14:05 (Step 116)
+
+Time: 14:05 (Step 117)
+
+Time: 14:10 (Step 118)
+
+Time: 14:15 (Step 119)
+
+Time: 14:15 (Step 120)
+
+Time: 14:15 (Step 121)
+
+Time: 14:20 (Step 122)
+
+Time: 14:25 (Step 123)
+
+Time: 14:25 (Step 124)
+
+Time: 14:25 (Step 125)
+
+Time: 14:30 (Step 126)
+
+Time: 14:35 (Step 127)
+
+Time: 14:35 (Step 128)
+
+Time: 14:35 (Step 129)
+
+Time: 14:40 (Step 130)
+
+Time: 14:45 (Step 131)
+
+Time: 14:45 (Step 132)
+
+Time: 14:45 (Step 133)
+
+Time: 14:50 (Step 134)
+
+Time: 14:55 (Step 135)
+
+Time: 14:55 (Step 136)
+
+Time: 14:55 (Step 137)
+
+Time: 15:00 (Step 138)
+
+Time: 15:05 (Step 139)
+
+Time: 15:05 (Step 140)
+
+Time: 15:05 (Step 141)
+
+Time: 15:10 (Step 142)
+
+Time: 15:15 (Step 143)
+
+Time: 15:15 (Step 144)
+
+Time: 15:15 (Step 145)
+
+Time: 15:15 (Step 146)
+
+Time: 15:20 (Step 147)
+
+Time: 15:25 (Step 148)
+
+Time: 15:25 (Step 149)
+
+Time: 15:25 (Step 150)
+
+Time: 15:25 (Step 151)
+
+Time: 15:30 (Step 152)
+
+Time: 15:35 (Step 153)
+
+Time: 15:35 (Step 154)
+
+Time: 15:35 (Step 155)
+
+Time: 15:35 (Step 156)
+
+Time: 15:40 (Step 157)
+
+Time: 15:45 (Step 158)
+
+Time: 15:45 (Step 159)
+
+Time: 15:45 (Step 160)
+
+Time: 15:45 (Step 161)
+
+Time: 15:50 (Step 162)
+
+Time: 15:55 (Step 163)
+
+Time: 15:55 (Step 164)
+
+Time: 15:55 (Step 165)
+
+Time: 15:55 (Step 166)
+
+Time: 16:00 (Step 167)
+
+Time: 16:05 (Step 168)
+
+Time: 16:05 (Step 169)
+
+Time: 16:05 (Step 170)
+
+Time: 16:05 (Step 171)
+
+Time: 16:10 (Step 172)
+
+Time: 16:15 (Step 173)
+
+Time: 16:15 (Step 174)
+
+Time: 16:15 (Step 175)
+
+Time: 16:15 (Step 176)
+
+Time: 16:15 (Step 177)
+
+Time: 16:20 (Step 178)
+
+Time: 16:25 (Step 179)
+
+Time: 16:25 (Step 180)
+
+Time: 16:25 (Step 181)
+
+Time: 16:25 (Step 182)
+
+Time: 16:25 (Step 183)
+
+Time: 16:30 (Step 184)
+
+Time: 16:35 (Step 185)
+
+Time: 16:35 (Step 186)
+
+Time: 16:35 (Step 187)
+
+Time: 16:35 (Step 188)
+
+Time: 16:35 (Step 189)
+
+Time: 16:40 (Step 190)
+
+Time: 16:45 (Step 191)
+
+Time: 16:45 (Step 192)
+
+Time: 16:45 (Step 193)
+
+Time: 16:45 (Step 194)
+
+Time: 16:45 (Step 195)
+
+Time: 16:50 (Step 196)
+
+Time: 16:55 (Step 197)
+
+Time: 16:55 (Step 198)
+
+Time: 16:55 (Step 199)
+
+Time: 16:55 (Step 200)
+
+Time: 16:55 (Step 201)
+
+Time: 17:00 (Step 202)
+
+Time: 17:05 (Step 203)
+
+Time: 17:05 (Step 204)
+
+Time: 17:05 (Step 205)
+
+Time: 17:05 (Step 206)
+
+Time: 17:05 (Step 207)
+
+Time: 17:10 (Step 208)
+
+Time: 17:15 (Step 209)
+
+Time: 17:15 (Step 210)
+
+Time: 17:15 (Step 211)
+
+Time: 17:15 (Step 212)
+
+Time: 17:15 (Step 213)
+
+Time: 17:20 (Step 214)
+
+Time: 17:25 (Step 215)
+
+Time: 17:25 (Step 216)
+
+Time: 17:25 (Step 217)
+
+Time: 17:25 (Step 218)
+
+Time: 17:25 (Step 219)
+
+Time: 17:30 (Step 220)
+
+Time: 17:35 (Step 221)
+
+Time: 17:35 (Step 222)
+
+Time: 17:35 (Step 223)
+
+Time: 17:35 (Step 224)
+
+Time: 17:35 (Step 225)
+
+Time: 17:40 (Step 226)
+
+Time: 17:45 (Step 227)
+
+Time: 17:45 (Step 228)
+
+Time: 17:45 (Step 229)
+
+Time: 17:45 (Step 230)
+
+Time: 17:45 (Step 231)
+
+Time: 17:50 (Step 232)
+
+Time: 17:55 (Step 233)
+
+Time: 17:55 (Step 234)
+
+Time: 17:55 (Step 235)
+
+Time: 17:55 (Step 236)
+
+Time: 17:55 (Step 237)
+
+Time: 18:00 (Step 238)
+
+Time: 18:05 (Step 239)
+
+Time: 18:05 (Step 240)
+
+Time: 18:05 (Step 241)
+
+Time: 18:05 (Step 242)
+
+Time: 18:05 (Step 243)
+
+Time: 18:10 (Step 244)
+
+Time: 18:15 (Step 245)
+
+Time: 18:15 (Step 246)
+
+Time: 18:15 (Step 247)
+
+Time: 18:15 (Step 248)
+
+Time: 18:15 (Step 249)
+
+Time: 18:20 (Step 250)
+
+Time: 18:25 (Step 251)
+
+Time: 18:25 (Step 252)
+
+Time: 18:25 (Step 253)
+
+Time: 18:25 (Step 254)
+
+Time: 18:25 (Step 255)
+
+Time: 18:30 (Step 256)
+
+Time: 18:30 (Step 257)
+
+Time: 18:35 (Step 258)
+
+Time: 18:35 (Step 259)
+
+Time: 18:35 (Step 260)
+
+Time: 18:35 (Step 261)
+
+Time: 18:35 (Step 262)
+
+Time: 18:40 (Step 263)
+
+Time: 18:40 (Step 264)
+
+Time: 18:45 (Step 265)
+
+Time: 18:45 (Step 266)
+
+Time: 18:45 (Step 267)
+
+Time: 18:45 (Step 268)
+
+Time: 18:45 (Step 269)
+
+Time: 18:50 (Step 270)
+
+Time: 18:50 (Step 271)
+
+Time: 18:55 (Step 272)
+
+Time: 18:55 (Step 273)
+
+Time: 18:55 (Step 274)
+
+Time: 18:55 (Step 275)
+
+Time: 18:55 (Step 276)
+
+Time: 19:00 (Step 277)
+
+Time: 19:00 (Step 278)
+
+Time: 19:00 (Step 279)
+
+Time: 19:05 (Step 280)
+
+Time: 19:05 (Step 281)
+
+Time: 19:05 (Step 282)
+
+Time: 19:05 (Step 283)
+
+Time: 19:05 (Step 284)
+
+Time: 19:10 (Step 285)
+
+Time: 19:10 (Step 286)
+
+Time: 19:10 (Step 287)
+
+Time: 19:15 (Step 288)
+
+Time: 19:15 (Step 289)
+
+Time: 19:15 (Step 290)
+
+Time: 19:15 (Step 291)
+
+Time: 19:15 (Step 292)
+
+Time: 19:20 (Step 293)
+
+Time: 19:20 (Step 294)
+
+Time: 19:20 (Step 295)
+
+Time: 19:25 (Step 296)
+
+Time: 19:25 (Step 297)
+
+Time: 19:25 (Step 298)
+
+Time: 19:25 (Step 299)
+
+Time: 19:25 (Step 300)
+
+Time: 19:30 (Step 301)
+
+Time: 19:30 (Step 302)
+
+Time: 19:30 (Step 303)
+
+Time: 19:35 (Step 304)
+
+Time: 19:35 (Step 305)
+
+Time: 19:35 (Step 306)
+
+Time: 19:35 (Step 307)
+
+Time: 19:35 (Step 308)
+
+Time: 19:40 (Step 309)
+
+Time: 19:40 (Step 310)
+
+Time: 19:40 (Step 311)
+
+Time: 19:45 (Step 312)
+
+Time: 19:45 (Step 313)
+
+Time: 19:45 (Step 314)
+
+Time: 19:45 (Step 315)
+
+Time: 19:45 (Step 316)
+
+Time: 19:50 (Step 317)
+
+Time: 19:50 (Step 318)
+
+Time: 19:50 (Step 319)
+
+Time: 19:55 (Step 320)
+
+Time: 19:55 (Step 321)
+
+Time: 19:55 (Step 322)
+
+Time: 19:55 (Step 323)
+
+Time: 19:55 (Step 324)
+
+Time: 20:00 (Step 325)
+
+Time: 20:00 (Step 326)
+
+Time: 20:00 (Step 327)
+
+Time: 20:05 (Step 328)
+
+Time: 20:05 (Step 329)
+
+Time: 20:05 (Step 330)
+
+Time: 20:05 (Step 331)
+
+Time: 20:05 (Step 332)
+
+Time: 20:10 (Step 333)
+
+Time: 20:10 (Step 334)
+
+Time: 20:10 (Step 335)
+
+Time: 20:15 (Step 336)
+
+Time: 20:15 (Step 337)
+
+Time: 20:15 (Step 338)
+
+Time: 20:15 (Step 339)
+
+Time: 20:15 (Step 340)
+
+Time: 20:20 (Step 341)
+
+Time: 20:20 (Step 342)
+
+Time: 20:20 (Step 343)
+
+Time: 20:25 (Step 344)
+
+Time: 20:25 (Step 345)
+
+Time: 20:25 (Step 346)
+
+Time: 20:25 (Step 347)
+
+Time: 20:25 (Step 348)
+
+Time: 20:30 (Step 349)
+
+Time: 20:30 (Step 350)
+
+Time: 20:30 (Step 351)
+
+Time: 20:35 (Step 352)
+
+Time: 20:35 (Step 353)
+
+Time: 20:35 (Step 354)
+
+Time: 20:35 (Step 355)
+
+Time: 20:35 (Step 356)
+
+Time: 20:40 (Step 357)
+
+Time: 20:40 (Step 358)
+
+Time: 20:40 (Step 359)
+
+Time: 20:45 (Step 360)
+
+Time: 20:45 (Step 361)
+
+Time: 20:45 (Step 362)
+
+Time: 20:45 (Step 363)
+
+Time: 20:45 (Step 364)
+
+Time: 20:50 (Step 365)
+
+Time: 20:50 (Step 366)
+
+Time: 20:50 (Step 367)
+
+Time: 20:55 (Step 368)
+
+Time: 20:55 (Step 369)
+
+Time: 20:55 (Step 370)
+
+Time: 20:55 (Step 371)
+
+Time: 20:55 (Step 372)
+
+Time: 21:00 (Step 373)
+
+Time: 21:00 (Step 374)
+
+Time: 21:00 (Step 375)
+
+Time: 21:05 (Step 376)
+
+Time: 21:05 (Step 377)
+
+Time: 21:05 (Step 378)
+
+Time: 21:05 (Step 379)
+
+Time: 21:05 (Step 380)
+
+Time: 21:10 (Step 381)
+
+Time: 21:10 (Step 382)
+
+Time: 21:10 (Step 383)
+
+Time: 21:15 (Step 384)
+
+Time: 21:15 (Step 385)
+
+Time: 21:15 (Step 386)
+
+Time: 21:15 (Step 387)
+
+Time: 21:15 (Step 388)
+
+Time: 21:15 (Step 389)
+
+Time: 21:20 (Step 390)
+
+Time: 21:20 (Step 391)
+
+Time: 21:20 (Step 392)
+
+Time: 21:25 (Step 393)
+
+Time: 21:25 (Step 394)
+
+Time: 21:25 (Step 395)
+
+Time: 21:25 (Step 396)
+
+Time: 21:25 (Step 397)
+
+Time: 21:25 (Step 398)
+
+Time: 21:30 (Step 399)
+
+Time: 21:30 (Step 400)
+
+Time: 21:30 (Step 401)
+
+Time: 21:35 (Step 402)
+
+Time: 21:35 (Step 403)
+
+Time: 21:35 (Step 404)
+
+Time: 21:35 (Step 405)
+
+Time: 21:35 (Step 406)
+
+Time: 21:35 (Step 407)
+
+Time: 21:40 (Step 408)
+
+Time: 21:40 (Step 409)
+
+Time: 21:40 (Step 410)
+
+Time: 21:45 (Step 411)
+
+Time: 21:45 (Step 412)
+
+Time: 21:45 (Step 413)
+
+Time: 21:45 (Step 414)
+
+Time: 21:45 (Step 415)
+
+Time: 21:45 (Step 416)
+
+Time: 21:50 (Step 417)
+
+Time: 21:50 (Step 418)
+
+Time: 21:50 (Step 419)
+
+Time: 21:55 (Step 420)
+
+Time: 21:55 (Step 421)
+
+Time: 21:55 (Step 422)
+
+Time: 21:55 (Step 423)
+
+Time: 21:55 (Step 424)
+
+Time: 21:55 (Step 425)
+
+Time: 22:00 (Step 426)
+
+Time: 22:00 (Step 427)
+
+Time: 22:00 (Step 428)
+
+Time: 22:05 (Step 429)
+
+Time: 22:05 (Step 430)
+
+Time: 22:05 (Step 431)
+
+Time: 22:05 (Step 432)
+
+Time: 22:05 (Step 433)
+
+Time: 22:05 (Step 434)
+
+Time: 22:10 (Step 435)
+
+Time: 22:10 (Step 436)
+
+Time: 22:10 (Step 437)
+
+Time: 22:15 (Step 438)
+
+Time: 22:15 (Step 439)
+
+Time: 22:15 (Step 440)
+
+Time: 22:15 (Step 441)
+
+Time: 22:15 (Step 442)
+
+Time: 22:15 (Step 443)
+
+Time: 22:20 (Step 444)
+
+Time: 22:20 (Step 445)
+
+Time: 22:20 (Step 446)
+
+Time: 22:25 (Step 447)
+
+Time: 22:25 (Step 448)
+
+Time: 22:25 (Step 449)
+
+Time: 22:25 (Step 450)
+
+Time: 22:25 (Step 451)
+
+Time: 22:25 (Step 452)
+
+Time: 22:30 (Step 453)
+
+Time: 22:30 (Step 454)
+
+Time: 22:30 (Step 455)
+
+Time: 22:30 (Step 456)
+
+Time: 22:35 (Step 457)
+
+Time: 22:35 (Step 458)
+
+Time: 22:35 (Step 459)
+
+Time: 22:35 (Step 460)
+
+Time: 22:35 (Step 461)
+
+Time: 22:35 (Step 462)
+
+Time: 22:40 (Step 463)
+
+Time: 22:40 (Step 464)
+
+Time: 22:40 (Step 465)
+
+Time: 22:40 (Step 466)
+
+Time: 22:45 (Step 467)
+
+Time: 22:45 (Step 468)
+
+Time: 22:45 (Step 469)
+
+Time: 22:45 (Step 470)
+
+Time: 22:45 (Step 471)
+
+Time: 22:45 (Step 472)
+
+Time: 22:50 (Step 473)
+
+Time: 22:50 (Step 474)
+
+Time: 22:50 (Step 475)
+
+Time: 22:50 (Step 476)
+
+Time: 22:55 (Step 477)
+
+Time: 22:55 (Step 478)
+
+Time: 22:55 (Step 479)
+
+Time: 22:55 (Step 480)
+
+Time: 22:55 (Step 481)
+
+Time: 22:55 (Step 482)
+
+Time: 23:00 (Step 483)
+
+Time: 23:00 (Step 484)
+
+Time: 23:00 (Step 485)
+
+Time: 23:00 (Step 486)
+
+Time: 23:05 (Step 487)
+
+Time: 23:05 (Step 488)
+
+Time: 23:05 (Step 489)
+
+Time: 23:05 (Step 490)
+
+Time: 23:05 (Step 491)
+
+Time: 23:05 (Step 492)
+
+Time: 23:10 (Step 493)
+
+Time: 23:10 (Step 494)
+
+Time: 23:10 (Step 495)
+
+Time: 23:10 (Step 496)
+
+Time: 23:15 (Step 497)
+
+Time: 23:15 (Step 498)
+
+Time: 23:15 (Step 499)
+
+Time: 23:15 (Step 500)
+
+Time: 23:15 (Step 501)
+
+Time: 23:15 (Step 502)
+
+Time: 23:20 (Step 503)
+
+Time: 23:20 (Step 504)
+
+Time: 23:20 (Step 505)
+
+Time: 23:20 (Step 506)
+
+Time: 23:25 (Step 507)
+
+Time: 23:25 (Step 508)
+
+Time: 23:25 (Step 509)
+
+Time: 23:25 (Step 510)
+
+Time: 23:25 (Step 511)
+
+Time: 23:25 (Step 512)
+
+Time: 23:30 (Step 513)
+
+Time: 23:30 (Step 514)
+
+Time: 23:30 (Step 515)
+
+Time: 23:30 (Step 516)
+
+Time: 23:35 (Step 517)
+
+Time: 23:35 (Step 518)
+
+Time: 23:35 (Step 519)
+
+Time: 23:35 (Step 520)
+
+Time: 23:35 (Step 521)
+
+Time: 23:35 (Step 522)
+
+Time: 23:40 (Step 523)
+
+Time: 23:40 (Step 524)
+
+Time: 23:40 (Step 525)
+
+Time: 23:40 (Step 526)
+
+Time: 23:45 (Step 527)
+
+Time: 23:45 (Step 528)
+
+Time: 23:45 (Step 529)
+
+Time: 23:45 (Step 530)
+
+Time: 23:45 (Step 531)
+
+Time: 23:45 (Step 532)
+
+Time: 23:50 (Step 533)
+
+Time: 23:50 (Step 534)
+
+Time: 23:50 (Step 535)
+
+Time: 23:50 (Step 536)
+
+Time: 23:55 (Step 537)
+
+Time: 23:55 (Step 538)
+
+Time: 23:55 (Step 539)
+
+Time: 23:55 (Step 540)
+
+Time: 23:55 (Step 541)
+
+Time: 23:55 (Step 542)
+
+Time: Day 1 00:00 (Step 543)
+
+Time: Day 1 00:00 (Step 544)
+
+Time: Day 1 00:00 (Step 545)
+
+Time: Day 1 00:00 (Step 546)
+
+Time: Day 1 00:05 (Step 547)
+
+Time: Day 1 00:05 (Step 548)
+
+Time: Day 1 00:05 (Step 549)
+
+Time: Day 1 00:05 (Step 550)
+
+Time: Day 1 00:05 (Step 551)
+
+Time: Day 1 00:05 (Step 552)
+
+Time: Day 1 00:10 (Step 553)
+
+Time: Day 1 00:10 (Step 554)
+
+Time: Day 1 00:10 (Step 555)
+
+Time: Day 1 00:10 (Step 556)
+
+Time: Day 1 00:15 (Step 557)
+
+Time: Day 1 00:15 (Step 558)
+
+Time: Day 1 00:15 (Step 559)
+
+Time: Day 1 00:15 (Step 560)
+
+Time: Day 1 00:15 (Step 561)
+
+Time: Day 1 00:15 (Step 562)
+
+Time: Day 1 00:20 (Step 563)
+
+Time: Day 1 00:20 (Step 564)
+
+Time: Day 1 00:20 (Step 565)
+
+Time: Day 1 00:20 (Step 566)
+
+Time: Day 1 00:25 (Step 567)
+
+Time: Day 1 00:25 (Step 568)
+
+Time: Day 1 00:25 (Step 569)
+
+Time: Day 1 00:25 (Step 570)
+
+Time: Day 1 00:25 (Step 571)
+
+Time: Day 1 00:25 (Step 572)
+
+Time: Day 1 00:30 (Step 573)
+
+Time: Day 1 00:30 (Step 574)
+
+Time: Day 1 00:30 (Step 575)
+
+Time: Day 1 00:30 (Step 576)
+
+Time: Day 1 00:35 (Step 577)
+
+Time: Day 1 00:35 (Step 578)
+
+Time: Day 1 00:35 (Step 579)
+
+Time: Day 1 00:35 (Step 580)
+
+Time: Day 1 00:35 (Step 581)
+
+Time: Day 1 00:35 (Step 582)
+
+Time: Day 1 00:40 (Step 583)
+
+Time: Day 1 00:40 (Step 584)
+
+Time: Day 1 00:40 (Step 585)
+
+Time: Day 1 00:40 (Step 586)
+
+Time: Day 1 00:45 (Step 587)
+
+Time: Day 1 00:45 (Step 588)
+
+Time: Day 1 00:45 (Step 589)
+
+Time: Day 1 00:45 (Step 590)
+
+Time: Day 1 00:45 (Step 591)
+
+Time: Day 1 00:45 (Step 592)
+
+Time: Day 1 00:50 (Step 593)
+
+Time: Day 1 00:50 (Step 594)
+
+Time: Day 1 00:50 (Step 595)
+
+Time: Day 1 00:50 (Step 596)
+
+Time: Day 1 00:55 (Step 597)
+
+Time: Day 1 00:55 (Step 598)
+
+Time: Day 1 00:55 (Step 599)
+
+Time: Day 1 00:55 (Step 600)
+
+Time: Day 1 00:55 (Step 601)
+
+Time: Day 1 00:55 (Step 602)
+
+Time: Day 1 01:00 (Step 603)
+
+Time: Day 1 01:00 (Step 604)
+
+Time: Day 1 01:00 (Step 605)
+
+Time: Day 1 01:00 (Step 606)
+
+Time: Day 1 01:05 (Step 607)
+
+Time: Day 1 01:05 (Step 608)
+
+Time: Day 1 01:05 (Step 609)
+
+Time: Day 1 01:05 (Step 610)
+
+Time: Day 1 01:05 (Step 611)
+
+Time: Day 1 01:05 (Step 612)
+
+Time: Day 1 01:10 (Step 613)
+
+Time: Day 1 01:10 (Step 614)
+
+Time: Day 1 01:10 (Step 615)
+
+Time: Day 1 01:10 (Step 616)
+
+Time: Day 1 01:15 (Step 617)
+
+Time: Day 1 01:15 (Step 618)
+
+Time: Day 1 01:15 (Step 619)
+
+Time: Day 1 01:15 (Step 620)
+
+Time: Day 1 01:15 (Step 621)
+
+Time: Day 1 01:15 (Step 622)
+
+Time: Day 1 01:20 (Step 623)
+
+Time: Day 1 01:20 (Step 624)
+
+Time: Day 1 01:20 (Step 625)
+
+Time: Day 1 01:20 (Step 626)
+
+Time: Day 1 01:25 (Step 627)
+
+Time: Day 1 01:25 (Step 628)
+
+Time: Day 1 01:25 (Step 629)
+
+Time: Day 1 01:25 (Step 630)
+
+Time: Day 1 01:25 (Step 631)
+
+Time: Day 1 01:25 (Step 632)
+
+Time: Day 1 01:30 (Step 633)
+
+Time: Day 1 01:30 (Step 634)
+
+Time: Day 1 01:30 (Step 635)
+
+Time: Day 1 01:30 (Step 636)
+
+Time: Day 1 01:35 (Step 637)
+
+Time: Day 1 01:35 (Step 638)
+
+Time: Day 1 01:35 (Step 639)
+
+Time: Day 1 01:35 (Step 640)
+
+Time: Day 1 01:35 (Step 641)
+
+Time: Day 1 01:35 (Step 642)
+
+Time: Day 1 01:40 (Step 643)
+
+Time: Day 1 01:40 (Step 644)
+
+Time: Day 1 01:40 (Step 645)
+
+Time: Day 1 01:40 (Step 646)
+
+Time: Day 1 01:45 (Step 647)
+
+Time: Day 1 01:45 (Step 648)
+
+Time: Day 1 01:45 (Step 649)
+
+Time: Day 1 01:45 (Step 650)
+
+Time: Day 1 01:45 (Step 651)
+
+Time: Day 1 01:45 (Step 652)
+
+Time: Day 1 01:50 (Step 653)
+
+Time: Day 1 01:50 (Step 654)
+
+Time: Day 1 01:50 (Step 655)
+
+Time: Day 1 01:50 (Step 656)
+
+Time: Day 1 01:55 (Step 657)
+
+Time: Day 1 01:55 (Step 658)
+
+Time: Day 1 01:55 (Step 659)
+
+Time: Day 1 01:55 (Step 660)
+
+Time: Day 1 01:55 (Step 661)
+
+Time: Day 1 01:55 (Step 662)
+
+Time: Day 1 02:00 (Step 663)
+
+Time: Day 1 02:00 (Step 664)
+
+Time: Day 1 02:00 (Step 665)
+
+Time: Day 1 02:00 (Step 666)
+
+Time: Day 1 02:05 (Step 667)
+
+Time: Day 1 02:05 (Step 668)
+
+Time: Day 1 02:05 (Step 669)
+
+Time: Day 1 02:05 (Step 670)
+
+Time: Day 1 02:05 (Step 671)
+
+Time: Day 1 02:05 (Step 672)
+
+Time: Day 1 02:10 (Step 673)
+
+Time: Day 1 02:10 (Step 674)
+
+Time: Day 1 02:10 (Step 675)
+
+Time: Day 1 02:10 (Step 676)
+
+Time: Day 1 02:15 (Step 677)
+
+Time: Day 1 02:15 (Step 678)
+
+Time: Day 1 02:15 (Step 679)
+
+Time: Day 1 02:15 (Step 680)
+
+Time: Day 1 02:15 (Step 681)
+
+Time: Day 1 02:15 (Step 682)
+
+Time: Day 1 02:20 (Step 683)
+
+Time: Day 1 02:20 (Step 684)
+
+Time: Day 1 02:20 (Step 685)
+
+Time: Day 1 02:20 (Step 686)
+
+Time: Day 1 02:25 (Step 687)
+
+Time: Day 1 02:25 (Step 688)
+
+Time: Day 1 02:25 (Step 689)
+
+Time: Day 1 02:25 (Step 690)
+
+Time: Day 1 02:25 (Step 691)
+
+Time: Day 1 02:25 (Step 692)
+
+Time: Day 1 02:30 (Step 693)
+
+Time: Day 1 02:30 (Step 694)
+
+Time: Day 1 02:30 (Step 695)
+
+Time: Day 1 02:30 (Step 696)
+
+Time: Day 1 02:35 (Step 697)
+
+Time: Day 1 02:35 (Step 698)
+
+Time: Day 1 02:35 (Step 699)
+
+Time: Day 1 02:35 (Step 700)
+
+Time: Day 1 02:35 (Step 701)
+
+Time: Day 1 02:35 (Step 702)
+
+Time: Day 1 02:40 (Step 703)
+
+Time: Day 1 02:40 (Step 704)
+
+Time: Day 1 02:40 (Step 705)
+
+Time: Day 1 02:40 (Step 706)
+
+Time: Day 1 02:45 (Step 707)
+
+Time: Day 1 02:45 (Step 708)
+
+Time: Day 1 02:45 (Step 709)
+
+Time: Day 1 02:45 (Step 710)
+
+Time: Day 1 02:45 (Step 711)
+
+Time: Day 1 02:45 (Step 712)
+
+Time: Day 1 02:50 (Step 713)
+
+Time: Day 1 02:50 (Step 714)
+
+Time: Day 1 02:50 (Step 715)
+
+Time: Day 1 02:50 (Step 716)
+
+Time: Day 1 02:55 (Step 717)
+
+Time: Day 1 02:55 (Step 718)
+
+Time: Day 1 02:55 (Step 719)
+
+Time: Day 1 02:55 (Step 720)
+
+Time: Day 1 02:55 (Step 721)
+
+Time: Day 1 02:55 (Step 722)
+
+Time: Day 1 03:00 (Step 723)
+
+Time: Day 1 03:00 (Step 724)
+
+Time: Day 1 03:00 (Step 725)
+
+Time: Day 1 03:00 (Step 726)
+
+Time: Day 1 03:05 (Step 727)
+
+Time: Day 1 03:05 (Step 728)
+
+Time: Day 1 03:05 (Step 729)
+
+Time: Day 1 03:05 (Step 730)
+
+Time: Day 1 03:05 (Step 731)
+
+Time: Day 1 03:05 (Step 732)
+
+Time: Day 1 03:10 (Step 733)
+
+Time: Day 1 03:10 (Step 734)
+
+Time: Day 1 03:10 (Step 735)
+
+Time: Day 1 03:10 (Step 736)
+
+Time: Day 1 03:15 (Step 737)
+
+Time: Day 1 03:15 (Step 738)
+
+Time: Day 1 03:15 (Step 739)
+
+Time: Day 1 03:15 (Step 740)
+
+Time: Day 1 03:15 (Step 741)
+
+Time: Day 1 03:15 (Step 742)
+
+Time: Day 1 03:20 (Step 743)
+
+Time: Day 1 03:20 (Step 744)
+
+Time: Day 1 03:20 (Step 745)
+
+Time: Day 1 03:20 (Step 746)
+
+Time: Day 1 03:25 (Step 747)
+
+Time: Day 1 03:25 (Step 748)
+
+Time: Day 1 03:25 (Step 749)
+
+Time: Day 1 03:25 (Step 750)
+
+Time: Day 1 03:25 (Step 751)
+
+Time: Day 1 03:25 (Step 752)
+
+Time: Day 1 03:30 (Step 753)
+
+Time: Day 1 03:30 (Step 754)
+
+Time: Day 1 03:30 (Step 755)
+
+Time: Day 1 03:30 (Step 756)
+
+Time: Day 1 03:35 (Step 757)
+
+Time: Day 1 03:35 (Step 758)
+
+Time: Day 1 03:35 (Step 759)
+
+Time: Day 1 03:35 (Step 760)
+
+Time: Day 1 03:35 (Step 761)
+
+Time: Day 1 03:35 (Step 762)
+
+Time: Day 1 03:40 (Step 763)
+
+Time: Day 1 03:40 (Step 764)
+
+Time: Day 1 03:40 (Step 765)
+
+Time: Day 1 03:40 (Step 766)
+
+Time: Day 1 03:45 (Step 767)
+
+Time: Day 1 03:45 (Step 768)
+
+Time: Day 1 03:45 (Step 769)
+
+Time: Day 1 03:45 (Step 770)
+
+Time: Day 1 03:45 (Step 771)
+
+Time: Day 1 03:45 (Step 772)
+
+Time: Day 1 03:50 (Step 773)
+
+Time: Day 1 03:50 (Step 774)
+
+Time: Day 1 03:50 (Step 775)
+
+Time: Day 1 03:50 (Step 776)
+
+Time: Day 1 03:55 (Step 777)
+
+Time: Day 1 03:55 (Step 778)
+
+Time: Day 1 03:55 (Step 779)
+
+Time: Day 1 03:55 (Step 780)
+
+Time: Day 1 03:55 (Step 781)
+
+Time: Day 1 03:55 (Step 782)
+
+Time: Day 1 04:00 (Step 783)
+
+Time: Day 1 04:00 (Step 784)
+
+Time: Day 1 04:00 (Step 785)
+
+Time: Day 1 04:00 (Step 786)
+
+Time: Day 1 04:05 (Step 787)
+
+Time: Day 1 04:05 (Step 788)
+
+Time: Day 1 04:05 (Step 789)
+
+Time: Day 1 04:05 (Step 790)
+
+Time: Day 1 04:05 (Step 791)
+
+Time: Day 1 04:05 (Step 792)
+
+Time: Day 1 04:10 (Step 793)
+
+Time: Day 1 04:10 (Step 794)
+
+Time: Day 1 04:10 (Step 795)
+
+Time: Day 1 04:10 (Step 796)
+
+Time: Day 1 04:15 (Step 797)
+
+Time: Day 1 04:15 (Step 798)
+
+Time: Day 1 04:15 (Step 799)
+
+Time: Day 1 04:15 (Step 800)
+
+Time: Day 1 04:15 (Step 801)
+
+Time: Day 1 04:15 (Step 802)
+
+Time: Day 1 04:20 (Step 803)
+
+Time: Day 1 04:20 (Step 804)
+
+Time: Day 1 04:20 (Step 805)
+
+Time: Day 1 04:20 (Step 806)
+
+Time: Day 1 04:25 (Step 807)
+
+Time: Day 1 04:25 (Step 808)
+
+Time: Day 1 04:25 (Step 809)
+
+Time: Day 1 04:25 (Step 810)
+
+Time: Day 1 04:25 (Step 811)
+
+Time: Day 1 04:25 (Step 812)
+
+Time: Day 1 04:30 (Step 813)
+
+Time: Day 1 04:30 (Step 814)
+
+Time: Day 1 04:30 (Step 815)
+
+Time: Day 1 04:30 (Step 816)
+
+Time: Day 1 04:35 (Step 817)
+
+Time: Day 1 04:35 (Step 818)
+
+Time: Day 1 04:35 (Step 819)
+
+Time: Day 1 04:35 (Step 820)
+
+Time: Day 1 04:35 (Step 821)
+
+Time: Day 1 04:35 (Step 822)
+
+Time: Day 1 04:40 (Step 823)
+
+Time: Day 1 04:40 (Step 824)
+
+Time: Day 1 04:40 (Step 825)
+
+Time: Day 1 04:40 (Step 826)
+
+Time: Day 1 04:45 (Step 827)
+
+Time: Day 1 04:45 (Step 828)
+
+Time: Day 1 04:45 (Step 829)
+
+Time: Day 1 04:45 (Step 830)
+
+Time: Day 1 04:45 (Step 831)
+
+Time: Day 1 04:45 (Step 832)
+
+Time: Day 1 04:50 (Step 833)
+
+Time: Day 1 04:50 (Step 834)
+
+Time: Day 1 04:50 (Step 835)
+
+Time: Day 1 04:50 (Step 836)
+
+Time: Day 1 04:55 (Step 837)
+
+Time: Day 1 04:55 (Step 838)
+
+Time: Day 1 04:55 (Step 839)
+
+Time: Day 1 04:55 (Step 840)
+
+Time: Day 1 04:55 (Step 841)
+
+Time: Day 1 04:55 (Step 842)
+
+Time: Day 1 05:00 (Step 843)
+
+Time: Day 1 05:00 (Step 844)
+
+Time: Day 1 05:00 (Step 845)
+
+Time: Day 1 05:00 (Step 846)
+
+Time: Day 1 05:05 (Step 847)
+
+Time: Day 1 05:05 (Step 848)
+
+Time: Day 1 05:05 (Step 849)
+
+Time: Day 1 05:05 (Step 850)
+
+Time: Day 1 05:05 (Step 851)
+
+Time: Day 1 05:05 (Step 852)
+
+Time: Day 1 05:10 (Step 853)
+
+Time: Day 1 05:10 (Step 854)
+
+Time: Day 1 05:10 (Step 855)
+
+Time: Day 1 05:10 (Step 856)
+
+Time: Day 1 05:15 (Step 857)
+
+Time: Day 1 05:15 (Step 858)
+
+Time: Day 1 05:15 (Step 859)
+
+Time: Day 1 05:15 (Step 860)
+
+Time: Day 1 05:15 (Step 861)
+
+Time: Day 1 05:15 (Step 862)
+
+Time: Day 1 05:20 (Step 863)
+
+Time: Day 1 05:20 (Step 864)
+
+Time: Day 1 05:20 (Step 865)
+
+Time: Day 1 05:20 (Step 866)
+
+Time: Day 1 05:25 (Step 867)
+
+Time: Day 1 05:25 (Step 868)
+
+Time: Day 1 05:25 (Step 869)
+
+Time: Day 1 05:25 (Step 870)
+
+Time: Day 1 05:25 (Step 871)
+
+Time: Day 1 05:25 (Step 872)
+
+Time: Day 1 05:30 (Step 873)
+
+Time: Day 1 05:30 (Step 874)
+
+Time: Day 1 05:30 (Step 875)
+
+Time: Day 1 05:30 (Step 876)
+
+Time: Day 1 05:35 (Step 877)
+
+Time: Day 1 05:35 (Step 878)
+
+Time: Day 1 05:35 (Step 879)
+
+Time: Day 1 05:35 (Step 880)
+
+Time: Day 1 05:35 (Step 881)
+
+Time: Day 1 05:35 (Step 882)
+
+Time: Day 1 05:40 (Step 883)
+
+Time: Day 1 05:40 (Step 884)
+
+Time: Day 1 05:40 (Step 885)
+
+Time: Day 1 05:40 (Step 886)
+
+Time: Day 1 05:45 (Step 887)
+
+Time: Day 1 05:45 (Step 888)
+
+Time: Day 1 05:45 (Step 889)
+
+Time: Day 1 05:45 (Step 890)
+
+Time: Day 1 05:45 (Step 891)
+
+Time: Day 1 05:45 (Step 892)
+
+Time: Day 1 05:50 (Step 893)
+
+Time: Day 1 05:50 (Step 894)
+
+Time: Day 1 05:50 (Step 895)
+
+Time: Day 1 05:50 (Step 896)
+
+Time: Day 1 05:55 (Step 897)
+
+Time: Day 1 05:55 (Step 898)
+
+Time: Day 1 05:55 (Step 899)
+
+Time: Day 1 05:55 (Step 900)
+
+Time: Day 1 05:55 (Step 901)
+
+Time: Day 1 05:55 (Step 902)
+
+Time: Day 1 06:00 (Step 903)
+
+Time: Day 1 06:00 (Step 904)
+
+Time: Day 1 06:00 (Step 905)
+
+Time: Day 1 06:00 (Step 906)
+
+Time: Day 1 06:05 (Step 907)
+
+Time: Day 1 06:05 (Step 908)
+
+Time: Day 1 06:05 (Step 909)
+
+Time: Day 1 06:05 (Step 910)
+
+Time: Day 1 06:05 (Step 911)
+
+Time: Day 1 06:05 (Step 912)
+
+Time: Day 1 06:10 (Step 913)
+
+Time: Day 1 06:10 (Step 914)
+
+Time: Day 1 06:10 (Step 915)
+
+Time: Day 1 06:10 (Step 916)
+
+Time: Day 1 06:15 (Step 917)
+
+Time: Day 1 06:15 (Step 918)
+
+Time: Day 1 06:15 (Step 919)
+
+Time: Day 1 06:15 (Step 920)
+
+Time: Day 1 06:15 (Step 921)
+
+Time: Day 1 06:15 (Step 922)
+
+Time: Day 1 06:20 (Step 923)
+
+Time: Day 1 06:20 (Step 924)
+
+Time: Day 1 06:20 (Step 925)
+
+Time: Day 1 06:20 (Step 926)
+
+Time: Day 1 06:25 (Step 927)
+
+Time: Day 1 06:25 (Step 928)
+
+Time: Day 1 06:25 (Step 929)
+
+Time: Day 1 06:25 (Step 930)
+
+Time: Day 1 06:25 (Step 931)
+
+Time: Day 1 06:25 (Step 932)
+
+Time: Day 1 06:30 (Step 933)
+
+Time: Day 1 06:30 (Step 934)
+
+Time: Day 1 06:30 (Step 935)
+
+Time: Day 1 06:30 (Step 936)
+
+Time: Day 1 06:35 (Step 937)
+
+Time: Day 1 06:35 (Step 938)
+
+Time: Day 1 06:35 (Step 939)
+
+Time: Day 1 06:35 (Step 940)
+
+Time: Day 1 06:35 (Step 941)
+
+Time: Day 1 06:35 (Step 942)
+
+Time: Day 1 06:40 (Step 943)
+
+Time: Day 1 06:40 (Step 944)
+
+Time: Day 1 06:40 (Step 945)
+
+Time: Day 1 06:40 (Step 946)
+
+Time: Day 1 06:45 (Step 947)
+
+Time: Day 1 06:45 (Step 948)
+
+Time: Day 1 06:45 (Step 949)
+
+Time: Day 1 06:45 (Step 950)
+
+Time: Day 1 06:45 (Step 951)
+
+Time: Day 1 06:45 (Step 952)
+
+Time: Day 1 06:50 (Step 953)
+
+Time: Day 1 06:50 (Step 954)
+
+Time: Day 1 06:50 (Step 955)
+
+Time: Day 1 06:50 (Step 956)
+
+Time: Day 1 06:55 (Step 957)
+
+Time: Day 1 06:55 (Step 958)
+
+Time: Day 1 06:55 (Step 959)
+
+Time: Day 1 06:55 (Step 960)
+
+Time: Day 1 06:55 (Step 961)
+
+Time: Day 1 06:55 (Step 962)
+
+Time: Day 1 07:00 (Step 963)
+
+Time: Day 1 07:00 (Step 964)
+
+Time: Day 1 07:00 (Step 965)
+
+Time: Day 1 07:00 (Step 966)
+
+Time: Day 1 07:05 (Step 967)
+
+Time: Day 1 07:05 (Step 968)
+
+Time: Day 1 07:05 (Step 969)
+
+Time: Day 1 07:05 (Step 970)
+
+Time: Day 1 07:05 (Step 971)
+
+Time: Day 1 07:05 (Step 972)
+
+Time: Day 1 07:10 (Step 973)
+
+Time: Day 1 07:10 (Step 974)
+
+Time: Day 1 07:10 (Step 975)
+
+Time: Day 1 07:10 (Step 976)
+
+Time: Day 1 07:15 (Step 977)
+
+Time: Day 1 07:15 (Step 978)
+
+Time: Day 1 07:15 (Step 979)
+
+Time: Day 1 07:15 (Step 980)
+
+Time: Day 1 07:15 (Step 981)
+
+Time: Day 1 07:15 (Step 982)
+
+Time: Day 1 07:20 (Step 983)
+
+Time: Day 1 07:20 (Step 984)
+
+Time: Day 1 07:20 (Step 985)
+
+Time: Day 1 07:20 (Step 986)
+
+Time: Day 1 07:25 (Step 987)
+
+Time: Day 1 07:25 (Step 988)
+
+Time: Day 1 07:25 (Step 989)
+
+Time: Day 1 07:25 (Step 990)
+
+Time: Day 1 07:25 (Step 991)
+
+Time: Day 1 07:25 (Step 992)
+
+Time: Day 1 07:30 (Step 993)
+
+Time: Day 1 07:30 (Step 994)
+
+Time: Day 1 07:30 (Step 995)
+
+Time: Day 1 07:30 (Step 996)
+
+Time: Day 1 07:35 (Step 997)
+
+Time: Day 1 07:35 (Step 998)
+
+Time: Day 1 07:35 (Step 999)
+
+Time: Day 1 07:35 (Step 1000)
+
+Time: Day 1 07:35 (Step 1001)
+
+Time: Day 1 07:35 (Step 1002)
+
+Time: Day 1 07:40 (Step 1003)
+
+Time: Day 1 07:40 (Step 1004)
+
+Time: Day 1 07:40 (Step 1005)
+
+Time: Day 1 07:40 (Step 1006)
+
+Time: Day 1 07:45 (Step 1007)
+
+Time: Day 1 07:45 (Step 1008)
+
+Time: Day 1 07:45 (Step 1009)
+
+Time: Day 1 07:45 (Step 1010)
+
+Time: Day 1 07:45 (Step 1011)
+
+Time: Day 1 07:45 (Step 1012)
+
+Time: Day 1 07:50 (Step 1013)
+
+Time: Day 1 07:50 (Step 1014)
+
+Time: Day 1 07:50 (Step 1015)
+
+Time: Day 1 07:50 (Step 1016)
+
+Time: Day 1 07:55 (Step 1017)
+
+Time: Day 1 07:55 (Step 1018)
+
+Time: Day 1 07:55 (Step 1019)
+
+Time: Day 1 07:55 (Step 1020)
+
+Time: Day 1 07:55 (Step 1021)
+
+Time: Day 1 07:55 (Step 1022)
+
+Time: Day 1 08:00 (Step 1023)
+
+Time: Day 1 08:00 (Step 1024)
+
+Time: Day 1 08:00 (Step 1025)
+
+Time: Day 1 08:00 (Step 1026)
+
+Time: Day 1 08:05 (Step 1027)
+
+Time: Day 1 08:05 (Step 1028)
+
+Time: Day 1 08:05 (Step 1029)
+
+Time: Day 1 08:05 (Step 1030)
+
+Time: Day 1 08:05 (Step 1031)
+
+Time: Day 1 08:05 (Step 1032)
+
+Time: Day 1 08:10 (Step 1033)
+
+Time: Day 1 08:10 (Step 1034)
+
+Time: Day 1 08:10 (Step 1035)
+
+Time: Day 1 08:10 (Step 1036)
+
+Time: Day 1 08:15 (Step 1037)
+
+Time: Day 1 08:15 (Step 1038)
+
+Time: Day 1 08:15 (Step 1039)
+
+Time: Day 1 08:15 (Step 1040)
+
+Time: Day 1 08:15 (Step 1041)
+
+Time: Day 1 08:15 (Step 1042)
+
+Time: Day 1 08:20 (Step 1043)
+
+Time: Day 1 08:20 (Step 1044)
+
+Time: Day 1 08:20 (Step 1045)
+
+Time: Day 1 08:20 (Step 1046)
+
+Time: Day 1 08:25 (Step 1047)
+
+Time: Day 1 08:25 (Step 1048)
+
+Time: Day 1 08:25 (Step 1049)
+
+Time: Day 1 08:25 (Step 1050)
+
+Time: Day 1 08:25 (Step 1051)
+
+Time: Day 1 08:25 (Step 1052)
+
+Time: Day 1 08:30 (Step 1053)
+
+Time: Day 1 08:30 (Step 1054)
+
+Time: Day 1 08:30 (Step 1055)
+
+Time: Day 1 08:30 (Step 1056)
+
+Time: Day 1 08:35 (Step 1057)
+
+Episode complete. Final time: Day 1 08:35

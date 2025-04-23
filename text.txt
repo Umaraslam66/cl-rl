@@ -1,0 +1,11 @@
+# Show the training plan
+python train.py --mode plan
+
+# Start training with 1 million timesteps
+python train.py --mode train --timesteps 100000
+
+# Visualize a trained agent
+python train.py --mode visualize --model path/to/model.zip --env path/to/normalize.pkl
+
+#tensorboard
+python -m tensorboard.main --logdir=train_yard_logs/tensorboard
